@@ -3,10 +3,10 @@
 include "../config.php";
 header('Content-type: text/json');
 // membaca refno dari GET request
-$namaKomoditas 	= '1';
-$jenisKomoditas = '1';
-$kodepos 		= '1';
-$jenisSentra 	= '1';
+$namaKomoditas 	= strtolower($_GET['namaKomoditas']);
+$jenisKomoditas = strtolower($_GET['jenisKomoditas']);
+$kodepos 		= $_GET['kodePos'];
+$jenisSentra 	= strtolower($_GET['jenisSentra']);
 // membaca session dari GET request
 $callback		= $_GET['cb'];
 

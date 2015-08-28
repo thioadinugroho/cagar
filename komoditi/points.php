@@ -15,6 +15,12 @@ if(empty($hp))
 	if(empty($callback) || is_null($callback)) $data = json_encode($log);
 	else $data = $callback.'('.json_encode($log).')';
 }
+else if(is_numeric($hp))
+{
+	$log=array('status_code'=>'101', 'status'=>'Data is not numeric','data'=>$_GET);
+	if(empty($callback) || is_null($callback)) $data = json_encode($log);
+	else $data = $callback.'('.json_encode($log).')';
+}
 else
 {
 	$sql = "
